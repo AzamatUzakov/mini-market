@@ -1,0 +1,19 @@
+@media(max-width: 685px) {
+    header {
+        .katalog_box {
+            display: none;
+        }
+
+        .menu_mobi {
+            display: block;
+        }
+
+        .tel_num, .you_zakaz{
+            display: none;
+        }
+        .word_center{
+            font-size: 18px;
+
+        }
+    }
+}

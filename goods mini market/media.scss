@@ -38,15 +38,29 @@
         }
     }
 
-    
-footer {
-    display: block;
-justify-content: center;
-text-align: center;
 
-.middle_block{
-    margin: 30px 0;
-}}
+    footer {
+        display: block;
+        justify-content: center;
+        text-align: center;
+
+        .middle_block {
+            margin: 30px 0;
+        }
+    }
+
+
+    .contact_info{
+        padding: 25px;
+         
+            .fle_box{
+                display: block;
+            text-align: center;    
+            h4{
+                margin-top: 15px;
+            }
+            }
+        }
 }
 
 
@@ -60,6 +74,8 @@ text-align: center;
         }
     }
 
+    .contact_info{
+        padding: 20px;}
     .main_basket_box {
         padding: 30px 20px;
     }
@@ -181,6 +197,8 @@ text-align: center;
         }
     }
 
+    .contact_info{
+        padding: 10px;}
     .goods_flex_box {
         display: flex;
         justify-content: space-between;

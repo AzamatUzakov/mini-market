@@ -118,6 +118,7 @@
     font-size: 15px;
     font-weight: 500;
     transition: .4s ease;
+    cursor: pointer;
 
     &:hover {
         background-color: gainsboro;
@@ -138,20 +139,23 @@
     display: none;
     backdrop-filter: blur(12px);
     justify-content: center;
+    z-index: 0;
 }
 
 #orderForm {
     position: relative;
     width: 400px;
-    background-color: #e6f0ff;
+    background-color: #ffffff57;
     height: 100%;
     padding: 30px 10px;
     border-radius: 20px;
-z-index: 9999;
+    z-index: 9999;
+
     h1 {
         font-size: 20px;
         text-align: center;
-    }
+        color: white;
+        text-shadow: 4px 4px 2px rgba(0,0,0,0.6);    }
 
     input,
     select,
@@ -186,27 +190,30 @@ z-index: 9999;
         transition: .4s ease;
 
         &:hover {
-            background-color: rgb(180, 253, 255);
-            color: black;
+            background-color: rgb(9, 110, 114);
+            color: rgb(255, 255, 255);
         }
 
     }
-    .back{
+
+    .back {
         position: absolute;
         color: white;
-    font-size: 25px;
-    left: 3%;
-    top: 4%;
-    font-weight: 500;
-    cursor: pointer;
-    transition: .4s ease;
+        font-size: 25px;
+        left: 3%;
+        top: 4%;
+        font-weight: 500;
+        cursor: pointer;
+        transition: .4s ease;
+            filter: invert(1) sepia(1) saturate(5) hue-rotate(900deg); /* Примерный перекрас через фильтры */
+        
+                &:hover {
+            color: black;
+        }
+    }
 
-    &:hover {
-        color: black;
+    div {
+        display: flex;
+        gap: 5px;
     }
-    }
-div{
-    display: flex;
-    gap: 5px;
-}
 }

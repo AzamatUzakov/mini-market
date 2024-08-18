@@ -1,16 +1,16 @@
 const cartItemsElement = document.querySelector('.cart-items');
 const totalPriceElement = document.querySelector('.total-price');
 const orderForm = document.getElementById('orderForm');
-let design = document.querySelector('.design')
-let tg_forms = document.querySelector('.tg_forms')
-let back = document.querySelector('.back')
+let design = document.querySelector('.design');
+let tg_forms = document.querySelector('.tg_forms');
+let back = document.querySelector('.back');
 
 design.onclick = () => {
-    tg_forms.style.display = "flex"
-}
+    tg_forms.style.display = "flex";
+};
 back.onclick = () => {
-    tg_forms.style.display = "none"
-}
+    tg_forms.style.display = "none";
+};
 
 function renderCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -103,13 +103,14 @@ orderForm.addEventListener('submit', function (event) {
     const paymentMethod = event.target.paymentMethod.value;
     const comment = event.target.comment.value;
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0); // Calculate total price
 
-    sendOrderToTelegram(firstName, lastName, phone, email, peopleCount, deliveryAddress, apartment, entrance, floor, paymentMethod, comment, cart);
+    sendOrderToTelegram(firstName, lastName, phone, email, peopleCount, deliveryAddress, apartment, entrance, floor, paymentMethod, comment, cart, total);
 });
 
-function sendOrderToTelegram(firstName, lastName, phone, email, peopleCount, deliveryAddress, apartment, entrance, floor, paymentMethod, comment, cart) {
+function sendOrderToTelegram(firstName, lastName, phone, email, peopleCount, deliveryAddress, apartment, entrance, floor, paymentMethod, comment, cart, total) {
     const token = '6905026549:AAH-0fy_rTvYqsd7FjqB82VvuLRd0OYMoFI';
-    const chatId = '1391605835';
+    const chatId = '@tomsk_24_7night'; // Отправка в канал через @имя_канала
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
     const cartItems = cart.map(item => `${item.title} - ${item.quantity} шт. - ${item.price} руб.`).join('\n');
@@ -127,7 +128,9 @@ Email: ${email}
 Комментарий: ${comment}
 
 Содержимое корзины:
-${cartItems}`;
+${cartItems}
+
+Итоговая цена: ${total} руб.`; // Append total price
 
     fetch(url, {
         method: 'POST',
@@ -142,7 +145,7 @@ ${cartItems}`;
         .then(response => response.json())
         .then(data => {
             if (data.ok) {
-                tg_forms.style.display = "none"
+                tg_forms.style.display = "none";
             } else {
                 alert('Ошибка отправки сообщения.');
             }
@@ -155,6 +158,3 @@ ${cartItems}`;
 
 // Вызов renderCart для отображения корзины при загрузке страницы
 renderCart();
-
-
-

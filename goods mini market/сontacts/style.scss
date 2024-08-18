@@ -1,0 +1,15 @@
+
+
+
+.contact_info{
+padding: 30px;
+    h1{
+        font-size: 20px;
+    }
+    .fle_box{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+}

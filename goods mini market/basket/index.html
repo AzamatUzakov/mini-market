@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Корзина</title>
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="/style.scss">
   <link rel="stylesheet" href="./style.scss">
   <link rel="stylesheet" href="/media.scss">
@@ -41,10 +40,10 @@
 
       <div class="katalog_box">
         <a href="/index.html">Продукты</a>
-        <a href="#">Алкоголь</a>
-        <a href="#">Напитки</a>
+        <a href="/alcohol/index.html">Алкоголь</a>
+        <a href="/fresh/index.html">Напитки</a>
         <a href="#">Контакты</a>
-        <a href="./basket/index.html">Корзина</a>
+        <a href="./index.html">Корзина</a>
       </div>
 
       <div class="menu_mobi">
@@ -52,10 +51,10 @@
           <img style="display: none;" class="X_icon" src="/public/x-symbol.png" alt="">
           <p>Меню</p>
         </div><br>
-        <a href="#">Продукты</a><br> <br>
-        <a href="#">Алкоголь</a><br><br>
-        <a href="#">Напитки</a><br><br>
-        <a href="#">Корзина</a><br><br>
+        <a href="./index.html">Продукты</a><br> <br>
+        <a href="/alcohol/index.html">Алкоголь</a><br><br>
+        <a href="/fresh/index.html">Напитки</a><br><br>
+        <a href="./index.html">Корзина</a><br><br>
         <a class="nth" href="#">Контакты</a>
       </div>
 
@@ -80,7 +79,7 @@
     </div>
     <div class="tg_forms">
       <form id="orderForm">
-        <img  width="30px" class="back" src="/public/undo_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="">
+        <img width="30px" class="back" src="/public/undo_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="">
         <h1>Заполните форму</h1>
         <div><input type="text" name="firstName" placeholder="Имя" required>
           <input type="text" name="lastName" placeholder="Фамилия" required>
@@ -111,7 +110,43 @@
       <div class="cart-item">
       </div>
     </div>
+
+    
   </div>
+  <footer style="margin-top: 30px;">
+
+    <div class="left_block">
+      <p>© Ночной Томск, 2023—2024 </p>
+      <p><strong>Адрес:</strong> г. Томск, ул. Смирнова 5</p>
+      <p><strong>Телефон:</strong> 8 996 636 06 96</p>
+      <br>
+      <br>
+      <p>Разработка сайтов - <a href="https://pixel-crafters.netlify.app/">Веб-студия Pixel-Crafters</a></p>
+    </div>
+
+    <div class="middle_block">
+      <h4>Меню кафе</h4><br>
+      <a href="/fresh/index.html">Напитки</a><br><br>
+      <a href="/index.html">Продукты</a><br><br>
+      <a href="/alcohol/index.html">Алкоголь</a>
+    </div>
+
+    <div class="right_block">
+      <h4>Мы в Соцсетях</h4>
+      <div class="tg_mail_vk_box">
+        <img width="30px" src="/public/vk.svg" alt="">
+        <img width="30px" src="/public/inst.svg" alt="">
+        <img width="30px" src="/public/telegram.svg" alt="">
+      </div>
+      <p>По всем вопросам:</p>
+      <div class="black_inst_vk">
+        <img width="30px" src="/public/black-inst.png" alt="">
+        <img width="30px" src="/public/./black-vk.png" alt="">
+      </div>
+    </div>
+
+
+  </footer>
   <script src="basket.js"></script>
   <script src="/main.js"></script>
 </body>
